@@ -1,21 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*No toma en cuenta los padding en general*/
+}
 #root{
     width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
     text-align: center;
 }
 .columnaFiltro{
     width: 20%;
     background-color: black;
-    height: 800px;
+    height: 100%;
+    position: fixed; /*Para que no siga estructuras de alineacion, por encima de todo */
+    top: 0; /*que se posicione hasta arriba */
+    left: 0; /*que se posicione a la izquierda */
 }
 .columnaFiltro img{
     width: 80%;
     margin-top: 50px;
+    margin-bottom: 50px;
 }
 .columnaCartas{
-    background-image: url(./images/catillo-fondo2.jpg);
+    background: url(./images/catillo-fondo2.jpg) no-repeat;
+    background-size: cover;
+    margin-left: 20%;
     width: 80%;
     height: 800px;
     display: flex;
@@ -26,15 +34,58 @@
 .cartas{
     width: 29.3%;
     margin: 0 1% 20px 1%;
-    border: 10px solid #A61508;
+    border: 10px solid #404040;
+    border-radius: 20px 0;
     height: 300px;
-    perspective: 1000px;
     position: relative;
     background-color: white;
 }
 .cartas img{
-    width: 5%;
+    width: 20px;
+}
+.cartas.Gryffindor{
+    border: 10px solid #A61508;
+}
+.cartas.Hufflepuff{
+    border: 10px solid #F29829;
+}
+.cartas.Ravenclaw{
+    border: 10px solid #024873;
+}
+.cartas.Slytherin{
+    border: 10px solid #1F734C;
+}
+.logoCarta{
+    position: absolute; /*pierde la alineacion por defecto del html*/
+    top: -1px;
+    right: 10px;
+    height: 100px;
+    width: 30px;
+    background: url(./images/banderaNull.png) no-repeat;
+    background-size: 90%;
+}
+h3{
+    margin-top: 35px;
+    margin-bottom: 10px;
+}
+.Gryffindor .logoCarta{
+    background: url(./images/banderaG.png) no-repeat;
+    background-size: 85%;
+}
+.Hufflepuff .logoCarta{
+    background: url(./images/banderaH.png) no-repeat;
+    background-size: 85%;
+}
+.Ravenclaw .logoCarta{
+    background: url(./images/banderaR.png) no-repeat;
+    background-size: 85%;
+}
+.Slytherin .logoCarta{
+    background: url(./images/banderaS.png) no-repeat;
+    background-size: 85%;
 }
 .iconos{
-    display: inline-flexbox;
+    width: 70%;
+    text-align: left;
+    margin: auto;
 }
