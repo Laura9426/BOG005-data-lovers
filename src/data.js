@@ -2,16 +2,16 @@ import data from './data/harrypotter/data.js';
 
 let personajes = [];
 
-data.characters.forEach((item, i) => {  //guardamos las imagenes en un array 
-    personajes[i] = item;              //para podederlas duplicar y organizar
+data.characters.forEach((item, i) => {  //guardamos los personajes en un array 
+    personajes[i] = item;              
   })
 
-  console.log(personajes);
+  //console.log(personajes[0].name);
 
 
-// estas funciones son de ejemplo
 
-export const example = () => {
+
+export const Cartas = () => {
   return 'example';
 };
 
