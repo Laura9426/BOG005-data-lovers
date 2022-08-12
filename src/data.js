@@ -6,7 +6,7 @@ data.characters.forEach((item, i) => {  //guardamos los personajes en un array
     personajes[i] = item;              
   })
 
-  //console.log(personajes[0].name);
+  console.log(personajes[0].name);
 
 
 

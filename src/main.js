@@ -1,5 +1,5 @@
-import { example } from './data.js';
+import { Cartas } from './data.js';
 
 
-((console.log(example, data);
+console.log(Cartas);
 
