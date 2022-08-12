@@ -1,5 +1,5 @@
-import { example } from './data.js';
+import { Cartas } from './data.js';
+document.getElementById("root").appendChild(Cartas());
 
-
-((console.log(example, data);
+//console.log(Cartas);
 
