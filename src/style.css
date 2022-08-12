@@ -1,0 +1,40 @@
+#root{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    text-align: center;
+}
+.columnaFiltro{
+    width: 20%;
+    background-color: black;
+    height: 800px;
+}
+.columnaFiltro img{
+    width: 80%;
+    margin-top: 50px;
+}
+.columnaCartas{
+    background-image: url(./images/catillo-fondo2.jpg);
+    width: 80%;
+    height: 800px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    padding: 15px 0;
+}
+.cartas{
+    width: 29.3%;
+    margin: 0 1% 20px 1%;
+    border: 10px solid #A61508;
+    height: 300px;
+    perspective: 1000px;
+    position: relative;
+    background-color: white;
+}
+.cartas img{
+    width: 5%;
+}
+.iconos{
+    display: inline-flexbox;
+}
