@@ -14,12 +14,40 @@
     position: fixed; /*Para que no siga estructuras de alineacion, por encima de todo */
     top: 0; /*que se posicione hasta arriba */
     left: 0; /*que se posicione a la izquierda */
+    text-align: center;
 }
 .columnaFiltro img{
     width: 80%;
     margin-top: 50px;
     margin-bottom: 50px;
 }
+
+.btnDesplegable{
+    
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    
+}
+
+h4{
+    margin-left: 25px;
+    background-color: white;
+    width: 100px;
+    line-height: 30px;
+    border-radius: 20px;
+}
+
+.opciones{
+
+    margin-left: 40px;
+    background-color: white;
+    width: 120px;
+    height: 30px;
+    border-radius: 20px;
+    text-align: center;
+}
+
 .columnaCartas{
     background: url(./images/catillo-fondo2.jpg) no-repeat;
     background-size: cover;
@@ -32,7 +60,7 @@
     padding: 15px 0;
 }
 .cartas{
-    width: 29.3%;
+    width: 330px;
     margin: 0 1% 20px 1%;
     border: 10px solid #404040;
     border-radius: 20px 0;
