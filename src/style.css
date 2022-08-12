@@ -1,23 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*no toma encuenta los padding*/
+}
 #root{
     width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
     text-align: center;
 }
 .columnaFiltro{
     width: 20%;
     background-color: black;
-    height: 800px;
+    height: 100%;
+    position: fixed; /*Para que no siga estructuras de alineacion, por encima de todo */
+    top: 0; /*que se posicione hasta arriba */
+    left: 0; /*que se posicione a la izquierda */
 }
 .columnaFiltro img{
     width: 80%;
     margin-top: 50px;
+    margin-bottom: 50px;
 }
 .columnaCartas{
-    background-image: url(./images/catillo-fondo2.jpg);
+    background: url(./images/catillo-fondo2.jpg) no-repeat;
+    background-size: cover; /*cambie background puse no repeat y puse este otro*/
     width: 80%;
     height: 800px;
+    margin-left: 20%;
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
@@ -26,15 +34,55 @@
 .cartas{
     width: 29.3%;
     margin: 0 1% 20px 1%;
-    border: 10px solid #A61508;
     height: 300px;
-    perspective: 1000px;
-    position: relative;
+    position: relative; /*para que la clase logoCarta no se salga de clase cartas*/
     background-color: white;
+
 }
 .cartas img{
-    width: 5%;
+    width: 20px;
+    
 }
+
+.cartas.Gryffindor{
+    border: 10px solid #A61508;
+}
+.cartas.Slytherin{
+    border: 10px solid green;
+}
+.cartas.Ravenclaw{
+    border: 10px solid blue;
+}
+.cartas.Hufflepuff{
+    border: 10px solid yellow;
+}
+
+.logoCarta{
+    position: absolute; /*pierde la alineacion por defecto del html*/
+    top: -1px;
+    right: 10px;
+    width: 30px;
+    height: 50px;
+}
+
+.Gryffindor .logoCarta{
+    background: red;
+    
+}
+.Slytherin .logoCarta{
+    background: green;  
+}
+.Hufflepuff .logoCarta{
+    background: yellow;
+}
+.Ravenclaw .logoCarta{
+    background: blue;
+}
+
+
 .iconos{
-    display: inline-flexbox;
+    width: 70%;
+    text-align: left;
+    margin: auto;
+    
 }
