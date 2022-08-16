@@ -97,8 +97,6 @@ const filtroEstados = () => {
 
   listasSeleccion.addEventListener('change', () => {
 
-   
-
     document.getElementById("columnaCartas").innerHTML = "";
 
     columna1 = document.getElementById("columnaCartas");
