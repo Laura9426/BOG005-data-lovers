@@ -4,8 +4,8 @@ let personajes = [];
 let casas = [];
 let generos = [];
 let ascendencias = [];
-let muerto = [];
-let vivo = [];
+let muertos = [];
+let vivos = [];
 let texto = "";
 
 data.characters.forEach((item, i) => {  //guardamos los personajes en un array 
@@ -19,7 +19,9 @@ export const Cartas = () => {
   filtroCasas()
   filtroGenero()
   filtroAscendencia()
-  filtroEstados()
+  filtroMuertos()
+  filtroVivos()
+  Todos()
   return columna;
 };
 
@@ -86,29 +88,66 @@ const filtroAscendencia = () => {
   return columna1;
 };
 
-const filtroEstados = () => {
+const filtroMuertos = () => {
   
   let columna1= "";
-  
-  muerto = personajes.filter(dato => dato.death !== null)
-  vivo = personajes.filter(dato => dato.death == null)
-  console.log(muerto, vivo);
-  const listasSeleccion = document.getElementById('estado');
 
-  listasSeleccion.addEventListener('change', () => {
+  const listasSeleccion = document.getElementById('muerto');
 
-   
+  listasSeleccion.addEventListener('click', () => {
+
+    muertos = personajes.filter(dato => dato.death !== null)
 
     document.getElementById("columnaCartas").innerHTML = "";
 
     columna1 = document.getElementById("columnaCartas");
 
     texto = "";
-    Pintar(muerto)
+    Pintar(muertos)
     columna1.innerHTML=texto;
   })
   return columna1;
 };
+
+const filtroVivos = () => {
+  
+  let columna1= "";
+
+  const listasSeleccion = document.getElementById('vivo');
+
+  listasSeleccion.addEventListener('click', () => {
+
+    vivos = personajes.filter(dato => dato.death == null)
+
+    document.getElementById("columnaCartas").innerHTML = "";
+
+    columna1 = document.getElementById("columnaCartas");
+
+    texto = "";
+    Pintar(vivos)
+    columna1.innerHTML=texto;
+  })
+  return columna1;
+};
+
+const Todos = () => {
+
+  let columna1= "";
+
+  const listasSeleccion = document.getElementById('todos');
+
+  listasSeleccion.addEventListener('click', () => {
+
+  document.getElementById("columnaCartas").innerHTML = "";
+
+  columna1 = document.getElementById("columnaCartas");
+
+  texto = "";
+  Pintar(personajes)
+  columna1.innerHTML=texto;
+  })
+  return columna1;
+}
 
 const Pintar = (datos) => {
 
