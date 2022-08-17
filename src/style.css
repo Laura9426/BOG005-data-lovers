@@ -22,11 +22,12 @@
     margin-bottom: 25px;
 }
 
-.btnDesplegable{
+.btnDesplegable > div{
     
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
+    justify-content: center;
     
 }
 
@@ -61,6 +62,9 @@ h4{
     margin-bottom: 25px;
     text-align: center;
 }
+.orden #za{
+    margin-left: 10px;
+}
 .orden label{
     color: white;
 }
@@ -79,13 +83,14 @@ h4{
 }
 .columnaCartas{
     background: url(./images/catillo-fondo2.jpg) no-repeat;
+    background-attachment: fixed;
     background-size: cover;
     margin-left: 20%;
     width: 80%;
-    height: 800px;
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
+    justify-content: center;
     padding: 15px 0;
 }
 .cartas{
@@ -124,6 +129,8 @@ h4{
 h3{
     margin-top: 35px;
     margin-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 40px;
 }
 .Gryffindor .logoCarta{
     background: url(./images/banderaG.png) no-repeat;
@@ -145,4 +152,70 @@ h3{
     width: 70%;
     text-align: left;
     margin: auto;
+}
+.iconos img{
+    margin-right: 10px;
+}
+.iconos tr td:first-child{
+    width: 30px;
+}
+.menu-movil, #menu-movil{
+    display: none;
+}
+@media only screen and (max-width : 600px){
+    .columnaFiltro {
+        position: relative;
+        width: 100%;
+        height: 50px;
+        text-align: left;
+        padding-left: 15px;
+        padding-top: 5px;
+    }
+    .columnaFiltro img {
+        width: 60px;
+        margin-top: 0;
+        margin-bottom: 0;
+        position: relative;
+        z-index: 3;
+    }
+    .menu-movil, #menu-movil{
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 50px;
+        height: 50px;
+    }
+    .menu-movil {
+        background: #FFF url(./images/bars.png) no-repeat center center;
+        background-size: 80% 100%;
+    }
+    #menu-movil{
+        opacity: 0;
+    }
+    .filtros {
+        position: absolute;
+        z-index: 2;
+        background: black;
+        top: 50px;
+        left: 0;
+        padding: 10px;
+        display: none;
+        width: 100%;
+    }
+    #menu-movil:checked ~ .filtros{
+        display: block;
+    }
+    .columnaCartas {
+        margin-left: 0;
+        width: 100%;
+        padding: 20px 15px;
+    }
+    .cartas {
+        width: 90%;
+        max-width: 330px;
+        margin: 0 0 20px 0;
+        height: auto;
+        padding-bottom: 30px;
+    }
 }
