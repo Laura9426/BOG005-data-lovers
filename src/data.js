@@ -1,11 +1,6 @@
 import data from './data/harrypotter/data.js';
 
 let personajes = [];
-let casas = [];
-let generos = [];
-let ascendencias = [];
-let muertos = [];
-let vivos = [];
 let texto = "";
 
 data.characters.forEach((item, i) => {  //guardamos los personajes en un array 
@@ -30,7 +25,7 @@ export const Cartas = () => {
 const filtroCasas = () => {
   
   let columna1= "";
-  
+  let casas = [];
   const listasSeleccion = document.getElementById('casa');
 
   listasSeleccion.addEventListener('change', (item) => {
@@ -51,7 +46,7 @@ const filtroCasas = () => {
 const filtroGenero = () => {
   
   let columna1= "";
-  
+  let generos = [];
   const listasSeleccion = document.getElementById('genero');
 
   listasSeleccion.addEventListener('change', (item) => {
@@ -72,7 +67,7 @@ const filtroGenero = () => {
 const filtroAscendencia = () => {
   
   let columna1= "";
-  
+  let ascendencias = [];
   const listasSeleccion = document.getElementById('ascendencia');
 
   listasSeleccion.addEventListener('change', (item) => {
@@ -93,12 +88,12 @@ const filtroAscendencia = () => {
 const filtroMuertos = () => {
   
   let columna1= "";
-
+  let muertos = [];
   const listasSeleccion = document.getElementById('muerto');
 
   listasSeleccion.addEventListener('click', () => {
 
-    muertos = personajes.filter(dato => dato.death !== null)
+    muertos = personajes.filter(({death}) => death !== null)
 
     document.getElementById("columnaCartas").innerHTML = "";
 
@@ -114,12 +109,12 @@ const filtroMuertos = () => {
 const filtroVivos = () => {
   
   let columna1= "";
-
+  let vivos = [];
   const listasSeleccion = document.getElementById('vivo');
 
   listasSeleccion.addEventListener('click', () => {
 
-    vivos = personajes.filter(dato => dato.death == null)
+    vivos = personajes.filter(({death}) => death == null)
 
     document.getElementById("columnaCartas").innerHTML = "";
 
@@ -171,8 +166,20 @@ const DesOrden = () => {
 
   listasSeleccion.addEventListener('click', () => {
     
-    nombres.sort((a, b) => b.name.localeCompare(a.name));
+    //nombres.sort((a, b) => b.name.localeCompare(a.name));
 
+    nombres.sort((a, b)=>{
+
+      if(a.name==b.name){
+        return 0
+      }
+      if(a.name>b.name){
+        return -1
+      }
+      return 1
+
+    });
+ 
     document.getElementById("columnaCartas").innerHTML = "";
 
     columna1 = document.getElementById("columnaCartas");
