@@ -9,9 +9,9 @@ let vivos = [];
 let texto = "";
 
 data.characters.forEach((item, i) => {  //guardamos los personajes en un array 
-    personajes[i] = item;              
+    personajes[i] = item;        
   })
-
+   
 export const Cartas = () => {
   const columna = document.getElementById("columnaCartas");
   Pintar(personajes)
@@ -22,6 +22,8 @@ export const Cartas = () => {
   filtroMuertos()
   filtroVivos()
   Todos()
+  Orden()
+  DesOrden()
   return columna;
 };
 
@@ -130,6 +132,58 @@ const filtroVivos = () => {
   return columna1;
 };
 
+const Orden = () => {
+  
+  let nombres = []
+  data.characters.forEach((item, i) => {  
+    nombres[i] = item;           
+  })
+
+  let columna1= "";
+
+  const listasSeleccion = document.getElementById('az');
+
+  listasSeleccion.addEventListener('click', () => {
+    
+    nombres.sort((a, b) => a.name.localeCompare(b.name));
+
+    document.getElementById("columnaCartas").innerHTML = "";
+
+    columna1 = document.getElementById("columnaCartas");
+
+    texto = "";
+    Pintar(nombres)
+    columna1.innerHTML=texto;
+  })
+  return columna1;
+};
+
+const DesOrden = () => {
+
+  let nombres = []
+  data.characters.forEach((item, i) => {  
+    nombres[i] = item;           
+  })
+  
+  let columna1= "";
+  
+  const listasSeleccion = document.getElementById('za');
+
+  listasSeleccion.addEventListener('click', () => {
+    
+    nombres.sort((a, b) => b.name.localeCompare(a.name));
+
+    document.getElementById("columnaCartas").innerHTML = "";
+
+    columna1 = document.getElementById("columnaCartas");
+
+    texto = "";
+    Pintar(nombres)
+    columna1.innerHTML=texto;
+  })
+  return columna1;
+};
+
 const Todos = () => {
 
   let columna1= "";
@@ -137,6 +191,14 @@ const Todos = () => {
   const listasSeleccion = document.getElementById('todos');
 
   listasSeleccion.addEventListener('click', () => {
+
+  document.getElementById('casa').selectedIndex = "0";
+  document.getElementById('genero').selectedIndex = "0";
+  document.getElementById('ascendencia').selectedIndex = "0";
+  document.getElementById('muerto').checked = false;
+  document.getElementById('vivo').checked = false;
+  document.getElementById('az').checked = false;
+  document.getElementById('za').checked = false;
 
   document.getElementById("columnaCartas").innerHTML = "";
 
@@ -147,7 +209,7 @@ const Todos = () => {
   columna1.innerHTML=texto;
   })
   return columna1;
-}
+};
 
 const Pintar = (datos) => {
 
@@ -177,4 +239,4 @@ for (let i = 0; i <datos.length; i++){
     </tr>
   </table>
 </article>`
-} }
+}};

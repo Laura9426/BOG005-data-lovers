@@ -19,7 +19,7 @@
 .columnaFiltro img{
     width: 80%;
     margin-top: 50px;
-    margin-bottom: 50px;
+    margin-bottom: 25px;
 }
 
 .btnDesplegable{
@@ -49,10 +49,23 @@ h4{
 }
 .estado{
     margin: 20px 20px;
+    
 }
 .estado label{
     color: white;
 }
+
+.orden{
+    margin: auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+.orden label{
+    color: white;
+}
+
+
 #todos{
     margin: auto;
     margin-top: 20px;
