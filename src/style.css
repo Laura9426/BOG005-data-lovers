@@ -1,37 +1,47 @@
-*{
+@import url('http://fonts.cdnfonts.com/css/hando-soft-trial');
+
+* {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /*No toma en cuenta los padding en general*/
+    box-sizing: border-box;
+    /*No toma en cuenta los padding en general*/
+    font-family: 'Hando Soft Trial', sans-serif;
 }
-#root{
+
+#root {
     width: 100%;
     text-align: center;
 }
-.columnaFiltro{
+
+.columnaFiltro {
     width: 20%;
     background-color: black;
     height: 100%;
-    position: fixed; /*Para que no siga estructuras de alineacion, por encima de todo */
-    top: 0; /*que se posicione hasta arriba */
-    left: 0; /*que se posicione a la izquierda */
+    position: fixed;
+    /*Para que no siga estructuras de alineacion, por encima de todo */
+    top: 0;
+    /*que se posicione hasta arriba */
+    left: 0;
+    /*que se posicione a la izquierda */
     text-align: center;
 }
-.columnaFiltro img{
+
+.columnaFiltro img {
     width: 80%;
     margin-top: 50px;
     margin-bottom: 25px;
 }
 
-.btnDesplegable > div{
-    
+.btnDesplegable>div {
+
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
     justify-content: center;
-    
+
 }
 
-h4{
+h4 {
     margin: 10px 15px;
     color: white;
     width: 100px;
@@ -39,7 +49,7 @@ h4{
     border-radius: 20px;
 }
 
-.opciones{
+.opciones {
 
     margin: 10px 15px;
     background-color: white;
@@ -48,29 +58,33 @@ h4{
     border-radius: 20px;
     text-align: center;
 }
-.estado{
+
+.estado {
     margin: 20px 20px;
-    
+
 }
-.estado label{
+
+.estado label {
     color: white;
 }
 
-.orden{
+.orden {
     margin: auto;
     margin-top: 25px;
     margin-bottom: 25px;
     text-align: center;
 }
-.orden #za{
+
+.orden #za {
     margin-left: 10px;
 }
-.orden label{
+
+.orden label {
     color: white;
 }
 
 
-#todos{
+#todos {
     margin: auto;
     margin-top: 20px;
     background-color: white;
@@ -81,7 +95,8 @@ h4{
     text-transform: uppercase;
     font-weight: bold;
 }
-.columnaCartas{
+
+.columnaCartas {
     background: url(./images/catillo-fondo2.jpg) no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -93,7 +108,8 @@ h4{
     justify-content: center;
     padding: 15px 0;
 }
-.cartas{
+
+.cartas {
     width: 330px;
     margin: 0 1% 20px 1%;
     border: 10px solid #404040;
@@ -102,23 +118,30 @@ h4{
     position: relative;
     background-color: white;
 }
-.cartas img{
+
+.cartas img {
     width: 20px;
 }
-.cartas.Gryffindor{
+
+.cartas.Gryffindor {
     border: 10px solid #A61508;
 }
-.cartas.Hufflepuff{
+
+.cartas.Hufflepuff {
     border: 10px solid #F29829;
 }
-.cartas.Ravenclaw{
+
+.cartas.Ravenclaw {
     border: 10px solid #024873;
 }
-.cartas.Slytherin{
+
+.cartas.Slytherin {
     border: 10px solid #1F734C;
 }
-.logoCarta{
-    position: absolute; /*pierde la alineacion por defecto del html*/
+
+.logoCarta {
+    position: absolute;
+    /*pierde la alineacion por defecto del html*/
     top: -1px;
     right: 10px;
     height: 100px;
@@ -126,63 +149,75 @@ h4{
     background: url(./images/banderaNull.png) no-repeat;
     background-size: 90%;
 }
-h3{
+
+h3 {
     margin-top: 35px;
     margin-bottom: 10px;
     padding-left: 10px;
     padding-right: 40px;
 }
-.Gryffindor .logoCarta{
+
+.Gryffindor .logoCarta {
     background: url(./images/banderaG.png) no-repeat;
     background-size: 85%;
 }
-.Hufflepuff .logoCarta{
+
+.Hufflepuff .logoCarta {
     background: url(./images/banderaH.png) no-repeat;
     background-size: 85%;
 }
-.Ravenclaw .logoCarta{
+
+.Ravenclaw .logoCarta {
     background: url(./images/banderaR.png) no-repeat;
     background-size: 85%;
 }
-.Slytherin .logoCarta{
+
+.Slytherin .logoCarta {
     background: url(./images/Sbandera.png) no-repeat;
     background-size: 85%;
 }
-.iconos{
+
+.iconos {
     width: 70%;
     text-align: left;
     margin: auto;
 }
-.iconos img{
+
+.iconos img {
     margin-right: 10px;
 }
-.iconos tr td:first-child{
+
+.iconos tr td:first-child {
     width: 30px;
 }
-.menu-movil, #menu-movil{
+
+.menu-movil,#menu-movil {
     display: none;
 }
-.fondoInicial{
+
+.fondoInicial {
     background: url(./images/fondo-castillo.jpg) no-repeat;
     background-size: cover;
-    
+
 }
 
-.paginaPrincipal{
+.paginaPrincipal {
     width: 100%;
     text-align: center;
     position: relative;
-    
+
 }
-.paginaPrincipal img{
+
+.paginaPrincipal img {
     width: 100%;
-    max-width: 700px;  
+    max-width: 700px;
     margin-top: 100px;
 }
-.boton{
+
+.boton {
     width: 210px;
     height: 55px;
-    background-color:white;
+    background-color: white;
     position: relative;
     cursor: pointer;
     border: none;
@@ -195,22 +230,43 @@ h3{
     margin-top: 50px;
     border: skyblue 1px solid;
 }
+
 .boton:hover {
-    background-color:  #537fa6;
+    background-color: #537fa6;
     color: white;
-  }
-.imgBoton{
+}
+
+.imgBoton {
     position: absolute;
-    background: url(./images/banderaG.png) no-repeat;
+    background: url(./images/banderaP1.png) no-repeat;
     background-size: 60%;
     top: -1px;
     right: -4px;
     height: 100px;
     width: 45px;
-    
 }
 
-@media only screen and (max-width : 600px){
+.imgBoton2 {
+    position: absolute;
+    background: url(./images/banderaP2.png) no-repeat;
+    background-size: 60%;
+    top: -1px;
+    right: -4px;
+    height: 100px;
+    width: 45px;
+}
+
+.imgBoton3 {
+    position: absolute;
+    background: url(./images/banderaP3.png) no-repeat;
+    background-size: 60%;
+    top: -1px;
+    right: -4px;
+    height: 100px;
+    width: 45px;
+}
+
+@media only screen and (max-width : 600px) {
     .columnaFiltro {
         position: relative;
         width: 100%;
@@ -219,6 +275,7 @@ h3{
         padding-left: 15px;
         padding-top: 5px;
     }
+
     .columnaFiltro img {
         width: 60px;
         margin-top: 0;
@@ -226,7 +283,8 @@ h3{
         position: relative;
         z-index: 3;
     }
-    .menu-movil, #menu-movil{
+
+    .menu-movil, #menu-movil {
         display: block;
         position: absolute;
         top: 0;
@@ -234,13 +292,16 @@ h3{
         width: 50px;
         height: 50px;
     }
+
     .menu-movil {
         background: #FFF url(./images/bars.png) no-repeat center center;
         background-size: 80% 100%;
     }
-    #menu-movil{
+
+    #menu-movil {
         opacity: 0;
     }
+
     .filtros {
         position: absolute;
         z-index: 2;
@@ -251,14 +312,17 @@ h3{
         display: none;
         width: 100%;
     }
-    #menu-movil:checked ~ .filtros{
+
+    #menu-movil:checked~.filtros {
         display: block;
     }
+
     .columnaCartas {
         margin-left: 0;
         width: 100%;
         padding: 20px 15px;
     }
+
     .cartas {
         width: 90%;
         max-width: 330px;
