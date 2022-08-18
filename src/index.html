@@ -1,78 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, 
-  user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <title>Data Lovers</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, 
+    user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Document</title>
+    <title>Harry Potter</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 
-<body>
-  <div id="root">
+<body class="fondoInicial">
 
-    <section class="columnaFiltro">
-      <img src="./images/escudo.png" alt="escudo">
-      <label for="menu-movil" class="menu-movil"></label>
-      <input type="checkbox" id="menu-movil">
-      <div class="filtros">
-        <article class="btnDesplegable">
-          <div>
-            <h4>HOUSE</h4>
-            <select class="opciones" name="house" id="casa">
-              <option value="Select">Select</option>
-              <option value="Gryffindor">Gryffindor</option>
-              <option value="Hufflepuff">Hufflepuff</option>
-              <option value="Ravenclaw">Ravenclaw</option>
-              <option value="Slytherin">Slytherin</option>
-            </select>
-          </div>
-          <div>
-            <h4>GENDER</h4>
-            <select class="opciones" name="genero" id="genero">
-              <option value="Select">Select</option>
-              <option value="Male">Male</option>
-              <option value="Female">Female</option>
-            </select>
-          </div>
-          <div>
-            <h4>ANCESTRY</h4>
-            <select class="opciones" name="ascendencia" id="ascendencia">
-              <option value="Select">Select</option>
-              <option value="Muggle">Muggle</option>
-              <option value="Half-blood">Half-blood</option>
-              <option value="Pure-blood">Pure-blood</option>
-              <option value="Squib">Squib</option>
-            </select>
-          </div>
-          <div>
-            <h4>STATUS</h4>
-            <div class="estado">
-              <input type="radio" id="muerto" value="muerto" name="estados">
-              <label for="muerto">Death</label>
-              <input type="radio" id="vivo" value="vivo" name="estados">
-              <label for="vivo">Alive</label>
-            </div>
-          </div>
-        </article>
+    <main class="paginaPrincipal">
+        <img src="./images/HarryPotter1.png" alt=""><br>
+        <button class="boton">PERSONAJES <div class="imgBoton"></div></button>
+        
+    </main>
 
-        <div class="orden">
-          <input type="radio" id="az" value="az" name="orden">
-          <label for="az">A-Z</label>
-          <input type="radio" id="za" value="za" name="orden">
-          <label for="za">Z-A</label><br>
-          <button id="todos">Todos</button>
-        </div>
-      </div>
-
-    </section>
-
-    <section class="columnaCartas" id="columnaCartas">
-
-    </section>
-  </div>
-  <script src="main.js" type="module"></script>
 </body>
 
 </html>

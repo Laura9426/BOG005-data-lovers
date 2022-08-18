@@ -145,7 +145,7 @@ h3{
     background-size: 85%;
 }
 .Slytherin .logoCarta{
-    background: url(./images/banderaS.png) no-repeat;
+    background: url(./images/Sbandera.png) no-repeat;
     background-size: 85%;
 }
 .iconos{
@@ -162,6 +162,54 @@ h3{
 .menu-movil, #menu-movil{
     display: none;
 }
+.fondoInicial{
+    background: url(./images/fondo-castillo.jpg) no-repeat;
+    background-size: cover;
+    
+}
+
+.paginaPrincipal{
+    width: 100%;
+    text-align: center;
+    position: relative;
+    
+}
+.paginaPrincipal img{
+    width: 100%;
+    max-width: 700px;  
+    margin-top: 100px;
+}
+.boton{
+    width: 210px;
+    height: 55px;
+    background-color:white;
+    position: relative;
+    cursor: pointer;
+    border: none;
+    justify-items: left;
+    font-size: 20px;
+    border-radius: 10px;
+    color: black;
+    font-weight: bold;
+    padding-right: 40px;
+    margin-top: 50px;
+    border: skyblue 1px solid;
+}
+.boton:hover {
+    background-color:  #537fa6;
+    color: white;
+  }
+.imgBoton{
+    position: absolute;
+    background: url(./images/banderaG.png) no-repeat;
+    background-size: 60%;
+    top: -1px;
+    right: -4px;
+    height: 100px;
+    width: 45px;
+    
+}
+
 @media only screen and (max-width : 600px){
     .columnaFiltro {
         position: relative;
