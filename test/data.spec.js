@@ -1,23 +1,24 @@
-import { example, anotherExample } from '../src/data.js';
+import { Cartas, Pintar } from '../src/data.js';
 
 
-describe('example', () => {
+describe('Cartas', () => {
+
   it('is a function', () => {
-    expect(typeof example).toBe('function');
+    expect(typeof Cartas).toBe('function');
   });
 
-  it('returns `example`', () => {
-    expect(example()).toBe('example');
-  });
+  /* it('returns `columna`', () => {
+    expect(Cartas()).toBe('columna');
+  }); */
 });
 
 
-describe('anotherExample', () => {
+describe('Pintar', () => {
   it('is a function', () => {
-    expect(typeof anotherExample).toBe('function');
+    expect(typeof Pintar).toBe('function');
   });
 
-  it('returns `anotherExample`', () => {
+/*   it('returns `anotherExample`', () => {
     expect(anotherExample()).toBe('OMG');
-  });
+  }); */
 });
