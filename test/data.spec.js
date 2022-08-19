@@ -1,24 +1,16 @@
-import { Cartas, Pintar } from '../src/data.js';
+import { filtrarDatos } from '../src/data.js';
 
 
-describe('Cartas', () => {
+describe('filtrarDatos', () => {
 
   it('is a function', () => {
-    expect(typeof Cartas).toBe('function');
+    expect(typeof filtrarDatos).toBe('function');
   });
 
-  /* it('returns `columna`', () => {
-    expect(Cartas()).toBe('columna');
-  }); */
+  it('Debería retornar "123456789" para "987654321"', () => {
+    
+    expect(filtrarDatos('987654321')).toBe('123456789');
+  });
 });
 
 
-describe('Pintar', () => {
-  it('is a function', () => {
-    expect(typeof Pintar).toBe('function');
-  });
-
-/*   it('returns `anotherExample`', () => {
-    expect(anotherExample()).toBe('OMG');
-  }); */
-});
