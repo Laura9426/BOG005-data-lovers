@@ -1,5 +1,5 @@
 import data from './data/harrypotter/data.js';
-import {filtrarDatos} from './data.js';
+import {filtrarDatos, sortDataAZ, sortDataZA, Calcular} from './data.js';
 
 let texto = "";
 
@@ -39,7 +39,7 @@ const filtroCasas = () => {
    
     document.getElementById("porcentaje").style.display = "block"
     let prueba = document.getElementById('porcentaje')
-    prueba.innerHTML = Calcular(item.target.value)
+    prueba.innerHTML = Calcular(item.target.value, data.characters)
 
   })
   return columna1;
@@ -52,9 +52,27 @@ const filtroGenero = () => {
   const listasSeleccion = document.getElementById('genero');
 
   listasSeleccion.addEventListener('change', (item) => {
+
+    const listasSeleccion = document.getElementById('casa');
+
+    const casaElegida = listasSeleccion.value;
+    let generos = [];
+
+    if(casaElegida !== 'select'){
+    
+    let casas = filtrarDatos(data.characters, 'house', casaElegida);
+
+    generos = filtrarDatos(casas, 'gender', item.target.value);    
+
+    return generos
   
-    let generos = filtrarDatos(data.characters, 'gender', item.target.value);
-  
+  } else {
+
+    generos = filtrarDatos(data.characters, 'gender', item.target.value);
+
+    return generos 
+  }
+
     document.getElementById("columnaCartas").innerHTML = "";
 
     columna1 = document.getElementById("columnaCartas");
@@ -137,7 +155,7 @@ const Orden = () => {
 
   listasSeleccion.addEventListener('click', () => {
 
-    let nombres = data.characters.sort((a, b) => a.name.localeCompare(b.name));
+    let nombres = sortDataAZ(data.characters, 'name');
 
     document.getElementById("columnaCartas").innerHTML = "";
 
@@ -158,17 +176,7 @@ const DesOrden = () => {
 
   listasSeleccion.addEventListener('click', () => {
 
-    //nombres.sort((a, b) => b.name.localeCompare(a.name));
-
-    let nombres = data.characters.sort((a, b) => {
-      if (a.name == b.name) {
-        return 0
-      }
-      if (a.name > b.name) {
-        return -1
-      }
-      return 1
-    });
+    let nombres = sortDataZA(data.characters, 'name');
 
     document.getElementById("columnaCartas").innerHTML = "";
 
@@ -239,34 +247,6 @@ const Pintar = (datos) => {
 </article>`
   }
 };
-
-const Calcular = (datoCasas) => {
-    
-let datosNumerico = [];
-let contador= 0;
-data.characters.forEach((item, i) => { 
-  datosNumerico[i] = item.house;
-}) 
-
-datosNumerico.sort();
-
- for(let i=0; i<datosNumerico.length;i++){
-
-  if(datosNumerico[i+1] == datosNumerico[i]){
-    contador++;
-  }
-  else{
-    let porcentaje = contador/datosNumerico.length*100
-
-    if(datosNumerico[i] == datoCasas){
-        datosNumerico = ("Estudiantes de " + datosNumerico[i] + " "+ Math.round(porcentaje) + " %")
-    }
-    contador=0;
-  }
-} 
-return datosNumerico
-}
-
 
 document.getElementById("root").appendChild(Cartas());
 
