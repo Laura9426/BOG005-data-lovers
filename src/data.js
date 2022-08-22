@@ -1,7 +1,7 @@
 export const filtrarDatos = (datos1, campoFiltrado, valor) => {
-  
+
   let generos = datos1.filter(dato => dato[campoFiltrado] == valor)
- 
+
   return generos;
 };
 
@@ -21,29 +21,35 @@ export const sortDataZA = (datos3, campoFiltrado2) => {
 
 }
 
-export const Calcular = (datoCasas,datos4) => {
-    
+export const Calcular = (datoCasas, datos4) => {
+ 
+  if (datoCasas == 'Select') {
+    return " "
+  }
+
   let datosNumerico = [];
-  let contador= 0;
-  datos4.forEach((item, i) => { 
+  let contador = 0;
+  datos4.forEach((item, i) => {
     datosNumerico[i] = item.house;
-  }) 
-  
+  })
+
   datosNumerico.sort();
-  
-   for(let i=0; i<datosNumerico.length;i++){
-  
-    if(datosNumerico[i+1] == datosNumerico[i]){
+
+  for (let i = 0; i < datosNumerico.length; i++) {
+
+    if (datosNumerico[i + 1] == datosNumerico[i]) {
       contador++;
     }
-    else{
-      let porcentaje = contador/datosNumerico.length*100
-  
-      if(datosNumerico[i] == datoCasas){
-          datosNumerico = ("Estudiantes de " + datosNumerico[i] + " "+ Math.round(porcentaje) + " %")
+    else {
+      let porcentaje = contador / datosNumerico.length * 100
+
+      if (datosNumerico[i] == datoCasas) {
+
+
+        datosNumerico = ("Estudiantes de " + datosNumerico[i] + " " + Math.round(porcentaje) + " %")
       }
-      contador=0;
+      contador = 0;
     }
-  } 
-  return datosNumerico
   }
+  return datosNumerico
+}

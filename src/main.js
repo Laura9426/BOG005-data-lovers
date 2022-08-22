@@ -27,7 +27,19 @@ const filtroCasas = () => {
 
   listasSeleccion.addEventListener('change', (item) => {
   
-    let casas = filtrarDatos(data.characters, 'house', item.target.value);
+    const listasSeleccion = document.getElementById('genero');
+    const casaElegida = listasSeleccion.value;
+
+    let casas = [];
+    
+    if(casaElegida !== 'Select'){
+
+    let generos = filtrarDatos(data.characters, 'gender', casaElegida);
+    casas = filtrarDatos(generos, 'house', item.target.value); 
+  
+  }else{
+    casas = filtrarDatos(data.characters, 'house', item.target.value);
+  }
   
     document.getElementById("columnaCartas").innerHTML = "";
 
@@ -57,20 +69,14 @@ const filtroGenero = () => {
 
     const casaElegida = listasSeleccion.value;
     let generos = [];
-
-    if(casaElegida !== 'select'){
+    
+    if(casaElegida !== 'Select'){
     
     let casas = filtrarDatos(data.characters, 'house', casaElegida);
-
     generos = filtrarDatos(casas, 'gender', item.target.value);    
-
-    return generos
   
   } else {
-
     generos = filtrarDatos(data.characters, 'gender', item.target.value);
-
-    return generos 
   }
 
     document.getElementById("columnaCartas").innerHTML = "";
