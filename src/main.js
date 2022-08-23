@@ -1,5 +1,5 @@
 import data from './data/harrypotter/data.js';
-import {filtrarDatos, sortDataAZ, sortDataZA, Calcular} from './data.js';
+import { filtrarDatos, sortDataAZ, sortDataZA, Calcular } from './data.js';
 
 let texto = "";
 
@@ -15,52 +15,52 @@ const Cartas = () => {
   Todos()
   Orden()
   DesOrden()
-  
+
   return columna;
 };
 
 const filtroCasas = () => {
-  
-  let columna1= "";
- 
+
+  let columna1 = "";
+
   const listasSeleccion = document.getElementById('casa');
 
   listasSeleccion.addEventListener('change', (item) => {
-  
+
     const listasSeleccion = document.getElementById('genero');
     const casaElegida = listasSeleccion.value;
 
     let casas = [];
-    
-    if(casaElegida !== 'Select'){
 
-    let generos = filtrarDatos(data.characters, 'gender', casaElegida);
-    casas = filtrarDatos(generos, 'house', item.target.value); 
-  
-  }else{
-    casas = filtrarDatos(data.characters, 'house', item.target.value);
-  }
-  
+    if (casaElegida !== 'Select') {
+
+      let generos = filtrarDatos(data.characters, 'gender', casaElegida);
+      casas = filtrarDatos(generos, 'house', item.target.value);
+
+    } else {
+      casas = filtrarDatos(data.characters, 'house', item.target.value);
+    }
+
     document.getElementById("columnaCartas").innerHTML = "";
 
     columna1 = document.getElementById("columnaCartas");
 
     texto = "";
     Pintar(casas)
-    columna1.innerHTML=texto;
-   
+    columna1.innerHTML = texto;
+
     document.getElementById("porcentaje").style.display = "block"
     let prueba = document.getElementById('porcentaje')
     prueba.innerHTML = Calcular(item.target.value, data.characters)
 
   })
   return columna1;
-}; 
+};
 
 const filtroGenero = () => {
-  
-  let columna1= "";
 
+  let columna1 = "";
+  
   const listasSeleccion = document.getElementById('genero');
 
   listasSeleccion.addEventListener('change', (item) => {
@@ -69,15 +69,15 @@ const filtroGenero = () => {
 
     const casaElegida = listasSeleccion.value;
     let generos = [];
-    
-    if(casaElegida !== 'Select'){
-    
-    let casas = filtrarDatos(data.characters, 'house', casaElegida);
-    generos = filtrarDatos(casas, 'gender', item.target.value);    
-  
-  } else {
-    generos = filtrarDatos(data.characters, 'gender', item.target.value);
-  }
+
+    if (casaElegida !== 'Select') {
+
+      let casas = filtrarDatos(data.characters, 'house', casaElegida);
+      generos = filtrarDatos(casas, 'gender', item.target.value);
+
+    } else {
+      generos = filtrarDatos(data.characters, 'gender', item.target.value);
+    }
 
     document.getElementById("columnaCartas").innerHTML = "";
 
@@ -85,20 +85,38 @@ const filtroGenero = () => {
 
     texto = "";
     Pintar(generos)
-    columna1.innerHTML=texto;
+    columna1.innerHTML = texto;
   })
   return columna1;
-}; 
+};
 
 const filtroAscendencia = () => {
 
   let columna1 = "";
-  
+
   const listasSeleccion = document.getElementById('ascendencia');
 
   listasSeleccion.addEventListener('change', (item) => {
 
-    let ascendencias = filtrarDatos(data.characters, 'ancestry', item.target.value);
+    const listasSeleccion = document.getElementById('casa');
+    const casaElegida = listasSeleccion.value;
+
+    const listasSeleccion1 = document.getElementById('genero');
+    const generoElegido = listasSeleccion1.value;
+    
+    let generos = [];
+    let ascendencias = [];
+
+    if (casaElegida !== 'Select') {
+
+      let casas = filtrarDatos(data.characters, 'house', casaElegida);
+      generos = filtrarDatos(casas, 'gender', generoElegido);
+      ascendencias = filtrarDatos(generos, 'ancestry', item.target.value);
+
+    } else {
+      ascendencias = filtrarDatos(data.characters, 'ancestry', item.target.value);
+    }
+
 
     document.getElementById("columnaCartas").innerHTML = "";
 
@@ -114,13 +132,13 @@ const filtroAscendencia = () => {
 const filtroMuertos = () => {
 
   let columna1 = "";
-  
+
   const listasSeleccion = document.getElementById('muerto');
 
   listasSeleccion.addEventListener('click', () => {
 
     let muertos = data.characters.filter(({ death }) => death !== null)
-              
+
     document.getElementById("columnaCartas").innerHTML = "";
 
     columna1 = document.getElementById("columnaCartas");
@@ -135,7 +153,7 @@ const filtroMuertos = () => {
 const filtroVivos = () => {
 
   let columna1 = "";
-  
+
   const listasSeleccion = document.getElementById('vivo');
 
   listasSeleccion.addEventListener('click', () => {

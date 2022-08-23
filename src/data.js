@@ -41,7 +41,7 @@ export const Calcular = (datoCasas, datos4) => {
       contador++;
     }
     else {
-      let porcentaje = contador / datosNumerico.length * 100
+      let porcentaje = (contador / datosNumerico.length) * 100
 
       if (datosNumerico[i] == datoCasas) {
 
