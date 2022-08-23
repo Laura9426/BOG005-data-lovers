@@ -46,7 +46,7 @@ export const Calcular = (datoCasas, datos4) => {
       if (datosNumerico[i] == datoCasas) {
 
 
-        datosNumerico = ("Estudiantes de " + datosNumerico[i] + " " + Math.round(porcentaje) + " %")
+        datosNumerico = ("Estudiantes " + datosNumerico[i] + " " + Math.round(porcentaje) + "%")
       }
       contador = 0;
     }
